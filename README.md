@@ -38,7 +38,7 @@ CS6310-Heated-Plate
 java <packageName>.Demo -d # -l # -r # -t # -b #
 ```
 
-# [Design Study Report](/wiki/Design-Study-Report)
+# [Design Study Report](wiki/Design-Study-Report)
 
 
 # Contributors
