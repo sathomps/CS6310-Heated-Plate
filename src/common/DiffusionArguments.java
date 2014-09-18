@@ -35,32 +35,26 @@ public class DiffusionArguments
     {
         for (int i = 0; i < args.length; i += 2)
         {
-
             final int value = Integer.valueOf(args[i + 1]);
-            switch (args[i])
+            if (args[i].equalsIgnoreCase("-d"))
             {
-            case "-d":
                 dimension = value;
-                break;
-
-            case "-l":
+            }
+            else if (args[i].equalsIgnoreCase("-l"))
+            {
                 leftTemp = value;
-                break;
-
-            case "-r":
+            }
+            else if (args[i].equalsIgnoreCase("-r"))
+            {
                 rightTemp = value;
-                break;
-
-            case "-t":
+            }
+            else if (args[i].equalsIgnoreCase("-t"))
+            {
                 topTemp = value;
-                break;
-
-            case "-b":
+            }
+            else if (args[i].equalsIgnoreCase("-b"))
+            {
                 bottomTemp = value;
-                break;
-
-            default:
-                break;
             }
         }
     }

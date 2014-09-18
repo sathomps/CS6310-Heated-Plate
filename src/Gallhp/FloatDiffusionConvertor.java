@@ -5,7 +5,6 @@ import common.DiffusionConvertor;
 
 public class FloatDiffusionConvertor implements DiffusionConvertor
 {
-
     @Override
     public Number convert(final Number[][] internals, final int row, final int cell)
     {
