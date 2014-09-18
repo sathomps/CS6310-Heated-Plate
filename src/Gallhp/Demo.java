@@ -13,8 +13,7 @@ public class Demo extends DefaultDemo
             @Override
             public void run()
             {
-                final DiffusionUI ui = new DiffusionUI();
-                ui.setVisible(true);
+                new DiffusionUI();
             }
         });
 
