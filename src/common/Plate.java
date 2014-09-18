@@ -45,6 +45,7 @@ public class Plate
         }
     }
 
+    // XXX - REFACTOR - Move out to a calculation class
     public void calculateDiffusion(final Plate oldPlate, final int row, final int cell)
     {
         internals[row][cell] = convertor.convert(internals, row, cell);

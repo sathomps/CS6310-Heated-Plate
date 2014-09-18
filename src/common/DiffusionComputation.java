@@ -2,10 +2,10 @@ package common;
 
 public class DiffusionComputation
 {
-    protected final DiffusionArguments args;
-    protected Plate                    oldPlate;
-    protected Plate                    newPlate;
-    private final int                  ITERATIONS = 100;
+    private final DiffusionArguments args;
+    private final Plate              oldPlate;
+    private final Plate              newPlate;
+    private final int                ITERATIONS = 100;
 
     public DiffusionComputation(final DiffusionArguments args, final Plate oldPlate, final Plate newPlate)
     {
