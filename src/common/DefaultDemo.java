@@ -2,11 +2,17 @@ package common;
 
 public abstract class DefaultDemo
 {
-    protected static void execute(final DiffusionArguments args, final Plate oldPlate, final Plate newPlate)
+    protected static void execute(final String[] args, final NumberConvertor convertor)
     {
-        final DiffusionComputation comp = new DiffusionComputation(args, oldPlate, newPlate);
+        final DiffusionArguments diffArgs = new DiffusionArguments(args);
+        diffArgs.setConvertor(convertor);
 
-        comp.calculate();
-        comp.display();
+        final Plate oldPlate = new Plate(diffArgs);
+        final Plate newPlate = new Plate(diffArgs);
+
+        final DiffusionSimulation simulation = new DiffusionSimulation(diffArgs, oldPlate, newPlate);
+
+        simulation.calculate();
+        simulation.display();
     }
 }

@@ -16,15 +16,5 @@ public class Demo extends DefaultDemo
                 new DiffusionUI();
             }
         });
-
-        /*
-         * final DiffusionArguments diffArgs = new DiffusionArguments(args);
-         * diffArgs.setConvertor(new FloatDiffusionConvertor());
-         * 
-         * final Plate oldPlate = new Plate(diffArgs); final Plate newPlate =
-         * new Plate(diffArgs);
-         * 
-         * execute(diffArgs, oldPlate, newPlate);
-         */
     }
 }

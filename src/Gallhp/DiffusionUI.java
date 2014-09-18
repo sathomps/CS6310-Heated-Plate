@@ -9,13 +9,15 @@ import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 
-import common.DiffusionConvertor;
+import Twfahp.FloatNumberConvertor;
+
+import common.NumberConvertor;
 
 public class DiffusionUI extends JFrame
 {
-    private static final long              serialVersionUID = 1L;
+    private static final long           serialVersionUID = 1L;
 
-    private final List<DiffusionConvertor> convertors       = new ArrayList<DiffusionConvertor>();
+    private final List<NumberConvertor> convertors       = new ArrayList<NumberConvertor>();
 
     public DiffusionUI()
     {
@@ -55,6 +57,6 @@ public class DiffusionUI extends JFrame
      */
     private void gatherConvertors()
     {
-        convertors.add(new FloatDiffusionConvertor());
+        convertors.add(new FloatNumberConvertor());
     }
 }

@@ -2,15 +2,17 @@ package common;
 
 public class Plate
 {
-    private final DiffusionConvertor convertor;
-    private final DiffusionArguments args;
-    private final Number[][]         internals;
+    private final DiffusionCalculation calc;
+    private final NumberConvertor      convertor;
+    private final DiffusionArguments   args;
+    private final Number[][]           grid;
 
     public Plate(final DiffusionArguments args)
     {
         this.args = args;
         this.convertor = args.getConvertor();
-        this.internals = convertor.convert(args);
+        this.grid = convertor.convert(args);
+        calc = new DiffusionCalculation(convertor);
         initialize();
     }
 
@@ -23,32 +25,31 @@ public class Plate
             {
                 if (row == 0)
                 {
-                    internals[row][cell] = convertor.convert(args.getTopTemp());
+                    grid[row][cell] = convertor.convert(args.getTopTemp());
                 }
                 else if (row == (args.getPlateDimensions() - 1))
                 {
-                    internals[row][cell] = convertor.convert(args.getBottomTemp());
+                    grid[row][cell] = convertor.convert(args.getBottomTemp());
                 }
                 else if (cell == 0)
                 {
-                    internals[row][cell] = convertor.convert(args.getLeftTemp());
+                    grid[row][cell] = convertor.convert(args.getLeftTemp());
                 }
                 else if (cell == (args.getPlateDimensions() - 1))
                 {
-                    internals[row][cell] = convertor.convert(args.getRightTemp());
+                    grid[row][cell] = convertor.convert(args.getRightTemp());
                 }
                 else
                 {
-                    internals[row][cell] = convertor.convert(0);
+                    grid[row][cell] = convertor.convert(0);
                 }
             }
         }
     }
 
-    // XXX - REFACTOR - Move out to a calculation class
     public void calculateDiffusion(final Plate oldPlate, final int row, final int cell)
     {
-        internals[row][cell] = convertor.convert(internals, row, cell);
+        grid[row][cell] = calc.calculate(grid, row, cell);
     }
 
     public void display()
@@ -57,7 +58,7 @@ public class Plate
         {
             for (int cell = 1; cell < (args.getPlateDimensions() - 1); cell++)
             {
-                System.out.print(convertor.convert(internals[row][cell]) + " ");
+                System.out.print(convertor.convertForDisplay(grid[row][cell], args.getPrecision()) + "  ");
             }
             System.out.println();
         }
@@ -69,7 +70,7 @@ public class Plate
         {
             for (int cell = 0; cell < args.getPlateDimensions(); cell++)
             {
-                internals[row][cell] = swapPlate.internals[row][cell];
+                grid[row][cell] = swapPlate.grid[row][cell];
             }
         }
     }
