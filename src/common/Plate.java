@@ -2,15 +2,15 @@ package common;
 
 public class Plate
 {
+    private final DiffusionConvertor convertor;
     private final DiffusionArguments args;
     private final Number[][]         internals;
-    private final DiffusionConvertor convertor;
 
-    public Plate(final DiffusionArguments args, final DiffusionConvertor convertor, final Float[][] internals)
+    public Plate(final DiffusionArguments args)
     {
         this.args = args;
-        this.convertor = convertor;
-        this.internals = internals;
+        this.convertor = args.getConvertor();
+        this.internals = convertor.convert(args);
         initialize();
     }
 

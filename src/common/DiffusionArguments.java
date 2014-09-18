@@ -4,12 +4,12 @@ import static java.lang.System.out;
 
 public class DiffusionArguments
 {
-    private int    dimension  = 0;
-    private Number leftTemp   = 0;
-    private Number rightTemp  = 0;
-    private Number topTemp    = 0;
-    private Number bottomTemp = 0;
-    private int    plateDimensions;
+    private int                dimension  = 0;
+    private Number             leftTemp   = 0;
+    private Number             rightTemp  = 0;
+    private Number             topTemp    = 0;
+    private Number             bottomTemp = 0;
+    private DiffusionConvertor convertor;
 
     public DiffusionArguments(final String[] args)
     {
@@ -63,13 +63,11 @@ public class DiffusionArguments
                 break;
             }
         }
-
-        plateDimensions = getDimension() + 2;
     }
 
     public int getPlateDimensions()
     {
-        return plateDimensions;
+        return getDimension() + 2;
     }
 
     public int getDimension()
@@ -121,4 +119,15 @@ public class DiffusionArguments
     {
         this.bottomTemp = bottomTemp;
     }
+
+    public void setConvertor(final DiffusionConvertor convertor)
+    {
+        this.convertor = convertor;
+    }
+
+    public DiffusionConvertor getConvertor()
+    {
+        return convertor;
+    }
+
 }
