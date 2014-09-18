@@ -14,6 +14,7 @@ public class Plate
         initialize();
     }
 
+    // XXX - Refactor
     private void initialize()
     {
         for (int row = 0; row < args.getPlateDimensions(); row++)
@@ -61,13 +62,13 @@ public class Plate
         }
     }
 
-    public void swap(final Plate newPlate)
+    public void swap(final Plate swapPlate)
     {
         for (int row = 0; row < args.getPlateDimensions(); row++)
         {
             for (int cell = 0; cell < args.getPlateDimensions(); cell++)
             {
-                internals[row][cell] = internals[row][cell];
+                internals[row][cell] = swapPlate.internals[row][cell];
             }
         }
     }
