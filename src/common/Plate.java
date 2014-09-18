@@ -29,11 +29,11 @@ public class Plate
                 {
                     internals[row][cell] = convertor.convert(args.getBottomTemp());
                 }
-                else if ((row > 0) && (row < args.getPlateDimensions()) && (cell == 0))
+                else if (cell == 0)
                 {
                     internals[row][cell] = convertor.convert(args.getLeftTemp());
                 }
-                else if ((row > 0) && (row < args.getPlateDimensions()) && (cell == (args.getPlateDimensions() - 1)))
+                else if (cell == (args.getPlateDimensions() - 1))
                 {
                     internals[row][cell] = convertor.convert(args.getRightTemp());
                 }
