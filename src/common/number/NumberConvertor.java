@@ -1,4 +1,6 @@
-package common;
+package common.number;
+
+import common.DiffusionArguments;
 
 public interface NumberConvertor
 {

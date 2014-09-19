@@ -2,9 +2,7 @@ package Gallhp;
 
 import javax.swing.SwingUtilities;
 
-import common.DefaultDemo;
-
-public class Demo extends DefaultDemo
+public class Demo
 {
     public static void main(final String args[])
     {

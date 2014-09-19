@@ -1,5 +1,6 @@
 package common;
 
+
 public class DiffusionSimulation
 {
     private final DiffusionArguments args;

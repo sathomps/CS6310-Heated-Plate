@@ -1,5 +1,7 @@
 package common;
 
+import common.number.NumberConvertor;
+
 public class DiffusionCalculation
 {
     private final NumberConvertor convertor;
@@ -9,18 +11,13 @@ public class DiffusionCalculation
         this.convertor = convertor;
     }
 
-    public Number calculate(final Number[][] grid, final int row, final int cell)
+    public Number calculate(final Plate plate, final int row, final int cell)
     {
-        return convertor.divide(add(grid, row, cell), 4);
+        return convertor.divide(add(plate, row, cell), 4);
     }
 
-    private Number add(final Number[][] grid, final int row, final int cell)
+    private Number add(final Plate plate, final int row, final int cell)
     {
-        return convertor.add(value(grid, row + 1, cell), value(grid, row - 1, cell), value(grid, row, cell + 1), value(grid, row, cell - 1));
-    }
-
-    private Number value(final Number[][] internals, final int row, final int cell)
-    {
-        return internals[row][cell];
+        return convertor.add(plate.getTemp(row + 1, cell), plate.getTemp(row - 1, cell), plate.getTemp(row, cell + 1), plate.getTemp(row, cell - 1));
     }
 }

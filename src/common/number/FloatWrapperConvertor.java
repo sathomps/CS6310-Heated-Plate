@@ -1,9 +1,8 @@
-package Twfahp;
+package common.number;
 
 import common.DiffusionArguments;
-import common.NumberConvertor;
 
-public class FloatNumberConvertor implements NumberConvertor
+public class FloatWrapperConvertor implements NumberConvertor
 {
 
     @Override

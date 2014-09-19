@@ -9,9 +9,8 @@ import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 
-import Twfahp.FloatNumberConvertor;
-
-import common.NumberConvertor;
+import common.number.FloatWrapperConvertor;
+import common.number.NumberConvertor;
 
 public class DiffusionUI extends JFrame
 {
@@ -57,6 +56,6 @@ public class DiffusionUI extends JFrame
      */
     private void gatherConvertors()
     {
-        convertors.add(new FloatNumberConvertor());
+        convertors.add(new FloatWrapperConvertor());
     }
 }

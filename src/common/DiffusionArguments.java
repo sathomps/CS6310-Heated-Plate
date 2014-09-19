@@ -2,6 +2,8 @@ package common;
 
 import static java.lang.System.out;
 
+import common.number.NumberConvertor;
+
 public class DiffusionArguments
 {
     private int             precision  = 2;
@@ -140,9 +142,10 @@ public class DiffusionArguments
         this.bottomTemp = bottomTemp;
     }
 
-    public void setConvertor(final NumberConvertor convertor)
+    public DiffusionArguments with(final NumberConvertor convertor)
     {
         this.convertor = convertor;
+        return this;
     }
 
     public NumberConvertor getConvertor()

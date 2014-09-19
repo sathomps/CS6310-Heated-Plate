@@ -1,11 +1,26 @@
 package Twfahp;
 
-import common.DefaultDemo;
+import common.AbstractDemo;
+import common.DiffusionArguments;
+import common.Plate;
+import common.number.FloatWrapperConvertor;
+import common.number.WrapperPlate;
 
-public class Demo extends DefaultDemo
+public class Demo extends AbstractDemo
 {
+    public Demo(final DiffusionArguments args)
+    {
+        super(args);
+    }
+
     public static void main(final String args[])
     {
-        execute(args, new FloatNumberConvertor());
+        new Demo(new DiffusionArguments(args).with(new FloatWrapperConvertor())).execute();
+    }
+
+    @Override
+    public Plate[] createPlates()
+    {
+        return new Plate[] { new WrapperPlate(args), new WrapperPlate(args) };
     }
 }
