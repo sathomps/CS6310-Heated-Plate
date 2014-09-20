@@ -35,6 +35,7 @@ CS6310-Heated-Plate
 * A GUI version that enables the user to execute any of the four previous versions and to see a visualization of the results (Gallhp)
 
 ```
+javac Gallhp/Demo.java
 java <packageName>.Demo -d # -l # -r # -t # -b #
 ```
 
