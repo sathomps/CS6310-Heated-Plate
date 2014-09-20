@@ -21,6 +21,10 @@ public class DiffusionArguments
         validateArgs();
     }
 
+    public DiffusionArguments()
+    {
+    }
+
     private void validateInput(final String[] args)
     {
         if ((args == null) || (args.length < 10))
@@ -97,9 +101,10 @@ public class DiffusionArguments
         return dimension;
     }
 
-    public void setDimension(final int dimension)
+    public DiffusionArguments setDimension(final int dimension)
     {
         this.dimension = dimension;
+        return this;
     }
 
     public Number getLeftTemp()
@@ -107,9 +112,10 @@ public class DiffusionArguments
         return leftTemp;
     }
 
-    public void setLeftTemp(final Number leftTemp)
+    public DiffusionArguments setLeftTemp(final Number leftTemp)
     {
         this.leftTemp = leftTemp;
+        return this;
     }
 
     public Number getRightTemp()
@@ -117,9 +123,10 @@ public class DiffusionArguments
         return rightTemp;
     }
 
-    public void setRightTemp(final Number rightTemp)
+    public DiffusionArguments setRightTemp(final Number rightTemp)
     {
         this.rightTemp = rightTemp;
+        return this;
     }
 
     public Number getTopTemp()
@@ -127,9 +134,10 @@ public class DiffusionArguments
         return topTemp;
     }
 
-    public void setTopTemp(final Number topTemp)
+    public DiffusionArguments setTopTemp(final Number topTemp)
     {
         this.topTemp = topTemp;
+        return this;
     }
 
     public Number getBottomTemp()
@@ -137,9 +145,10 @@ public class DiffusionArguments
         return bottomTemp;
     }
 
-    public void setBottomTemp(final Number bottomTemp)
+    public DiffusionArguments setBottomTemp(final Number bottomTemp)
     {
         this.bottomTemp = bottomTemp;
+        return this;
     }
 
     public DiffusionArguments with(final NumberConvertor convertor)
@@ -158,8 +167,9 @@ public class DiffusionArguments
         return precision;
     }
 
-    public void setPrecision(final int precision)
+    public DiffusionArguments setPrecision(final int precision)
     {
         this.precision = precision;
+        return this;
     }
 }

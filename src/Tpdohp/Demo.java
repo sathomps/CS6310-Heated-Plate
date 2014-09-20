@@ -10,12 +10,12 @@ public class Demo extends AbstractDemo
 {
     public Demo(final DiffusionArguments args)
     {
-        super(args);
+        super(args.with(new DoubleWrapperConvertor()));
     }
 
     public static void main(final String args[])
     {
-        new Demo(new DiffusionArguments(args).with(new DoubleWrapperConvertor())).execute();
+        new Demo(new DiffusionArguments(args)).execute();
     }
 
     @Override
