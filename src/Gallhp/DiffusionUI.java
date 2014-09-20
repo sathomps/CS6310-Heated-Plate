@@ -82,7 +82,7 @@ public class DiffusionUI extends JFrame
     {
         addDemos();
 
-        final JComboBox<Class<? extends AbstractDemo>> selection = new JComboBox<Class<? extends AbstractDemo>>();
+        final JComboBox selection = new JComboBox();
         menubar.add(selection);
         for (final Class<? extends AbstractDemo> demo : demos)
         {
@@ -122,10 +122,9 @@ public class DiffusionUI extends JFrame
                 return (Class<? extends AbstractDemo>) getSource(e).getSelectedItem();
             }
 
-            @SuppressWarnings("unchecked")
-            private JComboBox<Class<? extends AbstractDemo>> getSource(final ActionEvent e)
+            private JComboBox getSource(final ActionEvent e)
             {
-                return (JComboBox<Class<? extends AbstractDemo>>) e.getSource();
+                return (JComboBox) e.getSource();
             }
         });
     }
