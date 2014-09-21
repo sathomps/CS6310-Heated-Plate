@@ -71,14 +71,23 @@ public class RowCellPlate implements Plate
     @Override
     public void display()
     {
+        System.out.println(getOutput());
+    }
+    
+    public String getOutput() 
+    {
+        StringBuffer returnSB = new StringBuffer("");
         for (int row = 1; row < (args.getPlateDimensions() - 1); row++)
         {
             for (int cell = 1; cell < (args.getPlateDimensions() - 1); cell++)
             {
-                System.out.print(convertor.convertForDisplay(getTemp(row, cell), args.getPrecision()) + "  ");
+                returnSB.append(convertor.convertForDisplay(getTemp(row, cell), 
+                        args.getPrecision()) + "  ");
             }
-            System.out.println();
+            returnSB.append("\n");
         }
+        return returnSB.toString();
+ 
     }
 
     @Override

@@ -2,15 +2,14 @@ package Tpfahp;
 
 import common.AbstractDemo;
 import common.DiffusionArguments;
-import common.Plate;
 import common.number.FloatPlate;
 import common.number.FloatWrapperConvertor;
 
 public class Demo extends AbstractDemo
 {
-    public Demo(final DiffusionArguments args)
+    public Demo(final DiffusionArguments diffusionArgs)
     {
-        super(args.with(new FloatWrapperConvertor()));
+        super(diffusionArgs.with(new FloatWrapperConvertor()));
     }
 
     public static void main(final String args[])
@@ -19,8 +18,8 @@ public class Demo extends AbstractDemo
     }
 
     @Override
-    public Plate[] createPlates()
+    public FloatPlate[] createPlates()
     {
-        return new Plate[] { new FloatPlate(args), new FloatPlate(args) };
+        return new FloatPlate[] { new FloatPlate(diffusionArgs), new FloatPlate(diffusionArgs) };
     }
 }

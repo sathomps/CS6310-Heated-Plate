@@ -16,7 +16,14 @@ public class FloatPlate extends AbstractPlate
         initialize();
     }
 
-    @Override
+    /**
+	 * @return the grid
+	 */
+	public float[][] getGrid() {
+		return grid;
+	}
+
+	@Override
     public void initialize()
     {
         for (int row = 0; row < args.getPlateDimensions(); row++)

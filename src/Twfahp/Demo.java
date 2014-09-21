@@ -8,9 +8,9 @@ import common.number.WrapperPlate;
 
 public class Demo extends AbstractDemo
 {
-    public Demo(final DiffusionArguments args)
+    public Demo(final DiffusionArguments diffusionArgs)
     {
-        super(args.with(new FloatWrapperConvertor()));
+        super(diffusionArgs.with(new FloatWrapperConvertor()));
     }
 
     public static void main(final String args[])
@@ -19,8 +19,8 @@ public class Demo extends AbstractDemo
     }
 
     @Override
-    public Plate[] createPlates()
+    public WrapperPlate[] createPlates()
     {
-        return new Plate[] { new WrapperPlate(args), new WrapperPlate(args) };
+        return new WrapperPlate[] { new WrapperPlate(diffusionArgs), new WrapperPlate(diffusionArgs) };
     }
 }

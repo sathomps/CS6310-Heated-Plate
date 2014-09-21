@@ -8,9 +8,9 @@ import common.number.DoubleWrapperConvertor;
 
 public class Demo extends AbstractDemo
 {
-    public Demo(final DiffusionArguments args)
+    public Demo(final DiffusionArguments diffusionArgs)
     {
-        super(args.with(new DoubleWrapperConvertor()));
+        super(diffusionArgs.with(new DoubleWrapperConvertor()));
     }
 
     public static void main(final String args[])
@@ -19,8 +19,8 @@ public class Demo extends AbstractDemo
     }
 
     @Override
-    public Plate[] createPlates()
+    public DoublePlate[] createPlates()
     {
-        return new Plate[] { new DoublePlate(args), new DoublePlate(args) };
+        return new DoublePlate[] { new DoublePlate(diffusionArgs), new DoublePlate(diffusionArgs) };
     }
 }
