@@ -1,15 +1,17 @@
-package Tpfahp;
+package test;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
 
+import Tpdahp.Demo;
+
 import common.DiffusionArguments;
 import common.DiffusionSimulation;
-import common.number.FloatPlate;
+import common.number.DoublePlate;
 
-public class TpfahpTest {
+public class TpdahpTest {
 
-    protected FloatPlate[] plates;
+    protected DoublePlate[] plates;
     protected DiffusionSimulation simulation;
     protected Demo demo;
 	

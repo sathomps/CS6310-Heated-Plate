@@ -1,15 +1,17 @@
-package Tpdohp;
+package test;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
 
+import Twfahp.Demo;
+
 import common.DiffusionArguments;
 import common.DiffusionSimulation;
-import common.rowCell.RowCellPlate;
+import common.number.WrapperPlate;
 
-public class TpdohpTest {
+public class TwfahpTest {
 
-    protected RowCellPlate[] plates;
+    protected WrapperPlate[] plates;
     protected DiffusionSimulation simulation;
     protected Demo demo;
 	
