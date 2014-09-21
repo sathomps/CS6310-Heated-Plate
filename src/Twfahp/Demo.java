@@ -2,7 +2,6 @@ package Twfahp;
 
 import common.AbstractDemo;
 import common.DiffusionArguments;
-import common.Plate;
 import common.number.FloatWrapperConvertor;
 import common.number.WrapperPlate;
 

@@ -2,7 +2,6 @@ package Tpdahp;
 
 import common.AbstractDemo;
 import common.DiffusionArguments;
-import common.Plate;
 import common.number.DoublePlate;
 import common.number.DoubleWrapperConvertor;
 
